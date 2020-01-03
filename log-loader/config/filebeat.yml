@@ -1,0 +1,17 @@
+fields_under_root: true
+fields:
+  instance: ${INSTANCE}
+
+filebeat.prospectors:
+- input_type: log
+  paths:
+    - /usr/share/filebeat/logs/*.*
+    - /usr/share/filebeat/logs/*/*.*
+  multiline:
+    pattern: '^\[[0-9]{4}-'
+    negate: true
+    match: after
+
+output:
+  logstash:
+    hosts: ['logstash:5044']

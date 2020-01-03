@@ -1,0 +1,21 @@
+{
+  "name": "log-syncer",
+  "version": "0.1.0",
+  "description": "Keeps logs in sync with SFCC",
+  "author": {
+    "name": "Filipe Silva",
+    "email": "f.silva@emakina.nl"
+  },
+  "main": "main.js",
+  "keywords": [
+    "logs",
+    "webDAV",
+    "sync"
+  ],
+  "dependencies": {
+    "jsonfile": "^3.0.1",
+    "mkdirp": "^0.5.1",
+    "valid-url": "^1.0.9",
+    "webdav": "^1.0.0-rc1"
+  }
+}
