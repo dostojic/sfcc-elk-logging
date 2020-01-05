@@ -69,9 +69,47 @@ services:
     depends_on:
       - elasticsearch
 
+  #################################################################
+  #                           DEV01                               #
+  #################################################################
+  # logloader-dev01:
+  #   build:
+  #     context: log-loader/
+  #     args:
+  #       ELK_VERSION: $ELK_VERSION
+  #   environment:
+  #     SAVEDTIMESTAMPSDIR: /var/lib/log-loader
+  #     DOWNLOADBASEDIR: /var/log/salesforcecommercecloud
+  #     # <INSTANCE> will be replaced by the instance name when running. You can also specify other, sans-instance, URLs to download from
+  #     URLS: >
+  #           https://<INSTANCE>-shop-rituals.demandware.net/on/demandware.servlet/webdav/Sites/Logs/;
+  #     INSTANCE: dev01
+  #     USERNAME: log-downloader
+  #     PASSWORD: 9DA1^!hB
+  #   networks:
+  #     - elk
+  #   volumes:
+  #     - logs-dev01:/var/log/salesforcecommercecloud
+  #     - log-loader-data:/var/lib/log-loader
+
+  # filebeat-dev01:
+  #   build:
+  #     context: filebeat/
+  #     args:
+  #       ELK_VERSION: $ELK_VERSION
+  #   environment:
+  #     INSTANCE: dev01
+  #   networks:
+  #     - elk
+  #   volumes:
+  #     - logs-dev01:/usr/share/filebeat/logs
+
 networks:
   elk:
     driver: bridge
 
 volumes:
   elasticsearch:
+  logs-dev01:
+  elk-data:
+  log-loader-data:

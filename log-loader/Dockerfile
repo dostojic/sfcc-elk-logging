@@ -1,4 +1,6 @@
-FROM docker.elastic.co/beats/filebeat:6.1.3
+ARG ELK_VERSION
+
+FROM docker.elastic.co/beats/filebeat:${ELK_VERSION}
 
 USER root
 
