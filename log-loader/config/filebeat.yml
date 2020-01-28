@@ -9,4 +9,4 @@ filebeat.inputs:
     - /usr/share/filebeat/logs/*/*.*
 
 output.logstash:
-    hosts: ['localhost:5044']
+    hosts: ['logstash:5044']
