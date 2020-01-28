@@ -64,7 +64,7 @@ Other available stack variants:
 * 1.5 GB of RAM
 
 By default, the stack exposes the following ports:
-* 5000: Logstash TCP input
+* 5044: Logstash TCP input
 * 9200: Elasticsearch HTTP
 * 9300: Elasticsearch TCP transport
 * 5601: Kibana
@@ -184,12 +184,12 @@ you to send content via TCP:
 
 ```console
 # Using BSD netcat (Debian, Ubuntu, MacOS system, ...)
-$ cat /path/to/logfile.log | nc -q0 localhost 5000
+$ cat /path/to/logfile.log | nc -q0 localhost 5044
 ```
 
 ```console
 # Using GNU netcat (CentOS, Fedora, MacOS Homebrew, ...)
-$ cat /path/to/logfile.log | nc -c localhost 5000
+$ cat /path/to/logfile.log | nc -c localhost 5044
 ```
 
 You can also load the sample data provided by your Kibana installation.
